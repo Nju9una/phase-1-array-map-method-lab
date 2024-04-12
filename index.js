@@ -11,6 +11,20 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+const toTitleCase = (str) => {
+  return str.split(' ').map(word => {
+    if (word === 'OO') {
+      return 'OO';
+    } else if (word === 'API') {
+      return 'API';
+    } else {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+  }).join(' ');
+};
+
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(toTitleCase);
+};
+
+module.exports = titleCased;
